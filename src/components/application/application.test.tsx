@@ -43,6 +43,10 @@ describe('Application',()=>{
         const nameElem3= screen.getByPlaceholderText('fullName');
         expect(nameElem3).toBeInTheDocument()
 
+        //test nameElem by getByDisplayValue
+        const nameElem4= screen.getByDisplayValue('athar')
+        expect(nameElem4).toBeInTheDocument()
+
         const bioElem= screen.getByRole('textbox',{
             name:"Bio",
         })
@@ -53,10 +57,14 @@ describe('Application',()=>{
         expect(jobLocationElem).toBeInTheDocument()
 
         //test jobLocationElem by getByLabelText
-        const jobLocationElem2= screen.getByLabelText('Name',{
-            selector:'select'
-        })
-        expect(jobLocationElem2).toBeInTheDocument()
+        // const jobLocationElem2= screen.getByLabelText('Name',{
+        //     selector:'select'
+        // })
+        // expect(jobLocationElem2).toBeInTheDocument()
+
+        //test  jobLocationElem by getByDisplayValue
+        const jobLocationElem3= screen.getByDisplayValue ('United States')
+        expect(jobLocationElem3).toBeInTheDocument()
 
 
         //test termsElemby getByRole

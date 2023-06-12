@@ -1,5 +1,6 @@
-import React from 'react'
+import React,{useState} from 'react'
 const Application = () =>{
+    const [job,setJob]=useState("")
     return(
     <>
         <h1>Job Application Form</h1>
@@ -9,24 +10,23 @@ const Application = () =>{
         <form>
             <div>
                 <label htmlFor="name" >Name</label>
-                <input type="text" id="name" placeholder="fullName"/>
+                <input type="text" id="name" placeholder="fullName" value="athar"/>
             </div>
             <div>
                 <label htmlFor="bio">Bio</label>
                 <textarea id="bio" name="bio">write your bio</textarea>
             </div>
             <div>
-                {/* <label htmlFor="job-location">Job Location</label> */}
-                <label htmlFor="job-location">Name</label>
-
-                <select id="job-location">
-                    <option value="">Select a Country</option>
-                    <option value="US">United States</option>
-                    <option value="GB">United Kingdom</option>
-                    <option value="CA">Canada</option>
-                    <option value="IN">India</option>
-                    <option value="AS">Australia</option>
+                <label htmlFor="job-location">Job Location</label>
+                {/* <label htmlFor="job-location">Name</label> */}
+                <select value="select a Country" id="job-location" onChange={(e)=>{setJob(e.target.value)}}>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Canada">Canada</option>
+                    <option value="India">India</option>
+                    <option value="Australia">Australia</option>
                 </select>
+                {job}
             </div>
             <div>
                 <label>
