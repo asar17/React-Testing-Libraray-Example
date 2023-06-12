@@ -5,6 +5,9 @@ describe('Application',()=>{
     test('renders correctly',()=>{
         render(<Application/>)
 
+        const spanTitleElem= screen.getByTitle('close')
+        expect(spanTitleElem).toBeInTheDocument()
+        
         const pageHeading= screen.getByRole('heading',{
             // name:'Job Application Form'
             level:1,

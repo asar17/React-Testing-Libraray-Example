@@ -3,6 +3,7 @@ const Application = () =>{
     const [job,setJob]=useState("")
     return(
     <>
+        <span title="close">X</span>
         <h1>Job Application Form</h1>
         <h3>section one</h3>
         <p>about you</p>
