@@ -7,6 +7,7 @@ const Application = () =>{
         <h3>section one</h3>
         <p>about you</p>
         <span>about you</span>
+        <img src="https://via.placeholder.com/150" alt="a person with a laptop"/>
         <form>
             <div>
                 <label htmlFor="name" >Name</label>
