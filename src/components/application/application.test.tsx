@@ -17,6 +17,16 @@ describe('Application',()=>{
         })
         expect(sectionHeading).toBeInTheDocument()
 
+        const aboutYouPElem= screen.getByText('about you',{
+            selector:'p'
+        })
+        expect(aboutYouPElem).toBeInTheDocument()
+
+        const aboutYouSpanElem= screen.getByText('about you',{
+            selector:'span'
+        })
+        expect(aboutYouSpanElem).toBeInTheDocument()
+
         //test nameElem by getByRole
         const nameElem= screen.getByRole('textbox',{
             name:"Name",
@@ -29,6 +39,9 @@ describe('Application',()=>{
         })
         expect(nameElem2).toBeInTheDocument()
 
+        //test nameElem by getByPlaceHolderText
+        const nameElem3= screen.getByPlaceholderText('fullName');
+        expect(nameElem3).toBeInTheDocument()
 
         const bioElem= screen.getByRole('textbox',{
             name:"Bio",
@@ -52,10 +65,10 @@ describe('Application',()=>{
 
 
         //test termsElem by getByLabelText
-        const termsElem2= screen.getByLabelText('Name',{
-            selector:'input[type="checkbox"]'
-        })
-        expect(termsElem2).toBeInTheDocument()
+        // const termsElem2= screen.getByLabelText('Name',{
+        //     selector:'input[type="checkbox"]'
+        // })
+        // expect(termsElem2).toBeInTheDocument()
 
         const submitButtonElem= screen.getByRole('button')
         expect(submitButtonElem).toBeInTheDocument()

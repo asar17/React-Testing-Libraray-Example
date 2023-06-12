@@ -4,10 +4,12 @@ const Application = () =>{
     <>
         <h1>Job Application Form</h1>
         <h3>section one</h3>
+        <p>about you</p>
+        <span>about you</span>
         <form>
             <div>
                 <label htmlFor="name" >Name</label>
-                <input type="text" id="name"/>
+                <input type="text" id="name" placeholder="fullName"/>
             </div>
             <div>
                 <label htmlFor="bio">Bio</label>
@@ -28,8 +30,8 @@ const Application = () =>{
             </div>
             <div>
                 <label>
-                  {/* <input type="checkbox" id="terms"/> I agree to the terms and conditions */}
-                  <input type="checkbox" id="terms"/> Name
+                  <input type="checkbox" id="terms"/> I agree to the terms and conditions
+                  {/* <input type="checkbox" id="terms"/> Name */}
 
                 </label>
             </div>
