@@ -7,7 +7,7 @@ describe('Application',()=>{
 
         const spanTitleElem= screen.getByTitle('close')
         expect(spanTitleElem).toBeInTheDocument()
-        
+
         const pageHeading= screen.getByRole('heading',{
             // name:'Job Application Form'
             level:1,
@@ -32,6 +32,10 @@ describe('Application',()=>{
 
         const imgAltElem= screen.getByAltText('a person with a laptop')
         expect(imgAltElem).toBeInTheDocument()
+
+        //test custom element buy getByTestId
+        const customElem= screen.getByTestId('cus-elem');
+        expect(customElem).toBeInTheDocument()
 
         //test nameElem by getByRole
         const nameElem= screen.getByRole('textbox',{

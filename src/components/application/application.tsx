@@ -8,6 +8,7 @@ const Application = () =>{
         <h3>section one</h3>
         <p>about you</p>
         <span>about you</span>
+        <div data-testid="cus-elem">custom elemennt</div>
         <img src="https://via.placeholder.com/150" alt="a person with a laptop"/>
         <form>
             <div>
