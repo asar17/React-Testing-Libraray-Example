@@ -2,6 +2,7 @@ import React from 'react';
 import Greet from './components/greet/greet';
 import Application from './components/application/application';
 import Skills from './components/skills/skills';
+import NotFoundBtn from './components/notFoundBtn/notFoundBtn';
 
 
 
@@ -10,7 +11,8 @@ const App = () => {
         <div>
           {/* <Greet/> */}
           {/* <Application/> */}
-          <Skills />
+          {/* <Skills /> */}
+          <NotFoundBtn />
         </div>
       )
 };
