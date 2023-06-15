@@ -1,3 +1,3 @@
 export type SkillsPropsTypes={
-    skills?:string[]
+    skills:string[]
 }

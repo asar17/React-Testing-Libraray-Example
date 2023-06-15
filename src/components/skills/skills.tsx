@@ -4,7 +4,7 @@ const Skills = ({skills}:SkillsPropsTypes) =>{
     return(
         <div>
             <ul>
-                {skills?.map((skill)=>{
+                {skills.map((skill)=>{
                     return(
                         <li>
                            {skill}

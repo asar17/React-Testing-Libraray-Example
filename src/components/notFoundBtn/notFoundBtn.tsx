@@ -1,16 +1,19 @@
-import React,{useState} from 'react'
-type NotFoundBtnPropsType={
-    skills: string[]
-}
-const NotFoundBtn = ({skills}:NotFoundBtnPropsType) =>{
+import React,{useState,useEffect} from 'react'
+import {NotFoundBtnPropsType} from './notFoundBtn.type'
+const NotFoundBtn = ({items}:NotFoundBtnPropsType) =>{
+    useEffect(()=>{
+       setInterval(()=>{
+             setIsLog(true)
+       },500)
+    },[])
     const [isLog,setIsLog]=useState(false)
     return(
         <>
          <ul>
-            {skills.map((skill)=>{
+            {items?.map((item)=>{
                 return(
-                    <li>
-                        {skill}
+                    <li key={item}>
+                        {item}
                     </li>
                 )
             })}
@@ -18,7 +21,7 @@ const NotFoundBtn = ({skills}:NotFoundBtnPropsType) =>{
          {isLog ? (
             <button onClick={()=>{setIsLog(false)}}>logout</button>
          ):(
-           <button onClick={()=>{setIsLog(true)}}>login</button>
+           <button >login</button>
          )}
         </>
     )
