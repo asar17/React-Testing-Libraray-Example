@@ -46,4 +46,30 @@ describe('Counter',()=>{
         expect(counterElem).toHaveTextContent('counter is 2')
     })
 
+    //test button [change counter by amount value]
+    test('renders counter 10 after clicking chage counter by amount value',async ()=>{
+        user.setup()
+        render(<Counter/>)
+        const inputNumberElem= screen.getByRole('spinbutton');
+        //await user.type(inputNumberElem,"20")
+        expect(inputNumberElem).toHaveValue(10);
+
+        const btnChangeCounterByAmountValueElem= screen.getByRole('button',{
+            name:"change counter by amount value"
+        })
+        await user.click(btnChangeCounterByAmountValueElem);
+        const counterElem= screen.getByRole('heading')
+        expect(counterElem).toHaveTextContent('counter is 10')
+    })
+    //test keyboard interaction
+
+    test('keyboard interactions',async ()=>{
+        render(<Counter/>)
+        const incrementButton= screen.getByRole('button',{
+            name:'Increment'
+        })
+        await user.tab()
+        expect(incrementButton).toHaveFocus()
+    })
+
 })
