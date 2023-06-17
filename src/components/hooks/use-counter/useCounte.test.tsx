@@ -1,4 +1,5 @@
 import { renderHook , screen } from "@testing-library/react"
+import { act } from "react-dom/test-utils"
 import { useCounter } from './useCounter'
 describe('useCounter Hook',()=>{
     renderHook(useCounter)
@@ -18,6 +19,20 @@ describe('useCounter Hook',()=>{
       })
       expect(result.current.count).toBe(20)
     })
+    //test the increment method => update the state => setState => should use act utility function
+    test('increment the counter by 1',()=>{
+      const {result} = renderHook(useCounter)
+      act(()=>{result.current.incre()})
+      expect(result.current.count).toBe(1)
+    })
+
+     //test the decrement method => update the state => setState => should use act utility function
+     test('decrement the counter by 1',()=>{
+        const {result} = renderHook(useCounter)
+        act(()=>{result.current.decre()})
+        expect(result.current.count).toBe(-1)
+      })
+
 
  })
 
